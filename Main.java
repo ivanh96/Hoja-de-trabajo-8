@@ -5,8 +5,8 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		ArrayList<Paciente> listado = new ArrayList();
-		File f = new File( "src/pacientes.txt" );
+		Vector<Paciente> listado = new Vector<Paciente>();
+		File f = new File( "/Users/MacBookPro/Desktop/HDT8/pacientes.txt" );
 	    BufferedReader input;
 
 		try {
@@ -17,7 +17,7 @@ public class Main {
 	    	while(input.ready()) {
 	            info = input.readLine();
 	            String vector[] = info.split(",");
-	            Paciente paciente = new Paciente( vector[0].substring(0), vector[1].substring(0), vector[2].substring(0));
+	            Paciente paciente = new Paciente( vector[0], vector[1], vector[2]);
 		        listado.add(paciente);
 	        }
 	    }
@@ -26,7 +26,7 @@ public class Main {
 	    	e.printStackTrace();
 
 	    }
-
+	    System.out.println("LISTADO INICIAL\n");
 	    System.out.println(listado);
 	}
 }
