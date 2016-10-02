@@ -1,4 +1,13 @@
-
+/**--------------------------------------
+ * Universidad del Valle de Guatemala
+ * Algoritmos y Estructura de Datos 
+ * Seccion 10
+ * -------------------------------------
+ * Fredy España 15034
+ * Marlon Hernandez 15177
+ * -------------------------------------
+ * Clase Vector_Heap
+ --------------------------------------*/
 public interface I_Priority_Queue<E extends Comparable<E>> {
 	
 	public E getFirst();		// Devuelve el primer elemento
