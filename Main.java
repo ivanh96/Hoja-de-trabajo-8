@@ -1,3 +1,13 @@
+/**--------------------------------------
+ * Universidad del Valle de Guatemala
+ * Algoritmos y Estructura de Datos 
+ * Seccion 10
+ * -------------------------------------
+ * Fredy España 15034
+ * Marlon Hernandez 15177
+ * -------------------------------------
+ * Clase Main
+ --------------------------------------*/
 import java.util.*;
 import java.io.*;
 
@@ -6,7 +16,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		Vector<Paciente> listado = new Vector<Paciente>();
-		File f = new File( "/Users/MacBookPro/Desktop/HDT8/pacientes.txt" );
+		File f = new File( "src/pacientes.txt" );
 	    BufferedReader input;
 
 		try {
@@ -27,6 +37,21 @@ public class Main {
 
 	    }
 	    System.out.println("LISTADO INICIAL\n");
-	    System.out.println(listado);
+        for(int i=0; i<listado.size(); i++){
+            System.out.println(listado.get(i));
+		}
+
+		System.out.println("LISTADO ORDENADO\n");
+		
+		String ordenados="";
+		Vector_Heap vheap = new Vector_Heap(listado);
+		int size = vheap.size();
+		
+		for(int i=0; i<size; i++){
+			Paciente paciente = (Paciente)vheap.remove();
+			ordenados += paciente.toString()+"\n";
+		}
+		System.out.println(ordenados);
+
 	}
 }
